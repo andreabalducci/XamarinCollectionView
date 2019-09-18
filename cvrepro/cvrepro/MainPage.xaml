@@ -1,7 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="cvrepro.MainPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             mc:Ignorable="d"
+             x:Class="cvrepro.MainPage"
+             >
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Clear" HorizontalOptions="CenterAndExpand" Command="{Binding ClearItemsCommand}"
+            ></Button>
+            <Button Text="Add Items"  HorizontalOptions="CenterAndExpand" Command="{Binding AddItemsCommand}"/>
+        </StackLayout>
+        <CollectionView ItemsSource="{Binding Items}">
+            <!--<CollectionView.EmptyView>
+                <Label Text="Empty" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+            </CollectionView.EmptyView>-->
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                      <Grid Padding="10" Margin="12">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="3*" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            HeightRequest="150"
+                            Grid.RowSpan="2"
+                            Text="{Binding Id}"
+                        />
+
+                        <Label  Grid.Column="1"
+                                Grid.Row="0"
+                                VerticalOptions="Center"
+                                Text="{Binding Description}"
+                                FontAttributes="Bold" />
+
+
+                        <Label Text="{Binding Description}"
+                                       Grid.Row="1"
+                                       Grid.Column="1"
+                                       VerticalOptions="Start"
+                                       FontAttributes="Italic" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </StackLayout>
 </ContentPage>

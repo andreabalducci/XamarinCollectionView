@@ -13,9 +13,12 @@ namespace cvrepro
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        private ListViewModel _viewmodel;
+
         public MainPage()
         {
             InitializeComponent();
+            this.BindingContext = _viewmodel = new ListViewModel();
         }
     }
 }
