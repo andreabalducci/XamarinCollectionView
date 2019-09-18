@@ -16,7 +16,7 @@ namespace xamlist.Services
                 {
                     Id = $"{i:D5}", 
                     Text = $"This is item #{i:D5}", 
-                    Description = "This is an item description."
+                    Description = $"Generated at {DateTime.Now.ToString("T")}"
                 })
                 .ToList();
         }
