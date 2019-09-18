@@ -6,7 +6,8 @@ namespace xamlist.Models
 {
     public enum MenuItemType
     {
-        Browse,
+        List,
+        Collection,
         About
     }
     public class HomeMenuItem

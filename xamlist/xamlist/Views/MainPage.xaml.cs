@@ -21,7 +21,7 @@ namespace xamlist.Views
 
             MasterBehavior = MasterBehavior.Popover;
 
-            MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.List, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)
@@ -30,9 +30,14 @@ namespace xamlist.Views
             {
                 switch (id)
                 {
-                    case (int)MenuItemType.Browse:
+                    case (int)MenuItemType.List:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
+
+                    case (int)MenuItemType.Collection:
+                        MenuPages.Add(id, new NavigationPage(new ItemsCollectionPage()));
+                        break;
+
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
