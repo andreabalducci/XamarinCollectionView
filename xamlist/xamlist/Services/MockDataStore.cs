@@ -12,7 +12,7 @@ namespace xamlist.Services
 
         public MockDataStore()
         {
-            items = Enumerable.Range(1, 1000).Select(i => new Item
+            items = Enumerable.Range(1, 100).Select(i => new Item
                 {
                     Id = $"{i:D5}", 
                     Text = $"This is item #{i:D5}", 

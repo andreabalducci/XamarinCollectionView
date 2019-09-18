@@ -20,8 +20,8 @@ namespace xamlist.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.List, Title="List" },
                 new HomeMenuItem {Id = MenuItemType.Collection, Title="Collection view" },
+                new HomeMenuItem {Id = MenuItemType.List, Title="List" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" }
             };
 

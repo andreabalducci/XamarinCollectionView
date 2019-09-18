@@ -7,13 +7,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <CollectionView ItemsSource="{Binding Items}">
+        <CollectionView
+            ItemsSource="{Binding Items}"
+            >
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid Padding="10">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
@@ -34,7 +36,7 @@
                             Grid.Column="1"
                             FontAttributes="Italic"
                             Text="{Binding Description}"
-                            VerticalOptions="End" />
+                     />
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
